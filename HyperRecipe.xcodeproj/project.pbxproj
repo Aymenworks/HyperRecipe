@@ -54,6 +54,11 @@
 		A514F29A1E31604F00AC875B /* HyperRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				A514F2B11E3162C800AC875B /* Views */,
+				A514F2B01E3162BE00AC875B /* ViewControllers */,
+				A514F2AF1E3162B800AC875B /* ViewModel */,
+				A514F2AE1E3162B300AC875B /* Models */,
+				A514F2AD1E31629800AC875B /* DependencyInjection */,
 				A514F29B1E31604F00AC875B /* AppDelegate.swift */,
 				A514F29D1E31604F00AC875B /* ViewController.swift */,
 				A514F29F1E31604F00AC875B /* Main.storyboard */,
@@ -62,6 +67,41 @@
 				A514F2A71E31604F00AC875B /* Info.plist */,
 			);
 			path = HyperRecipe;
+			sourceTree = "<group>";
+		};
+		A514F2AD1E31629800AC875B /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		A514F2AE1E3162B300AC875B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A514F2AF1E3162B800AC875B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		A514F2B01E3162BE00AC875B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A514F2B11E3162C800AC875B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
