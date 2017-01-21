@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D17a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DifficultyView" customModule="HyperRecipe" customModuleProvider="target">
+            <connections>
+                <outlet property="decreaseLevelButtton" destination="HvX-6D-jRr" id="xDu-vb-vAB"/>
+                <outlet property="increaseLevelButton" destination="OVs-fk-nOl" id="Y3l-mF-84R"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="76" height="43"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HvX-6D-jRr">
+                    <rect key="frame" x="0.0" y="11" width="21" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="21" id="qa3-Qb-0Re"/>
+                        <constraint firstAttribute="height" constant="21" id="vk1-vf-uzu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                    <state key="normal" title="-">
+                        <color key="titleColor" red="0.19215686269999999" green="0.30588235289999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="decreaseLevel:" destination="-1" eventType="touchUpInside" id="Yhy-Ne-3r0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVs-fk-nOl">
+                    <rect key="frame" x="33" y="0.0" width="43" height="43"/>
+                    <color key="backgroundColor" red="0.19215686269999999" green="0.30588235289999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="43" id="PJ9-PH-XYB"/>
+                        <constraint firstAttribute="height" constant="43" id="PsQ-hb-is2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                    <state key="normal" title="2">
+                        <color key="titleColor" red="0.91372549020000005" green="0.90588235289999997" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="increaseLevel:" destination="-1" eventType="touchUpInside" id="LC2-hg-WGk"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="HvX-6D-jRr" firstAttribute="centerY" secondItem="OVs-fk-nOl" secondAttribute="centerY" id="I7R-2k-Gdq"/>
+                <constraint firstItem="OVs-fk-nOl" firstAttribute="leading" secondItem="HvX-6D-jRr" secondAttribute="trailing" constant="12" id="Nvc-QA-xf4"/>
+                <constraint firstItem="OVs-fk-nOl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eM9-VH-QoN"/>
+                <constraint firstAttribute="bottom" secondItem="OVs-fk-nOl" secondAttribute="bottom" id="g6v-bP-Pfd"/>
+                <constraint firstAttribute="trailing" secondItem="OVs-fk-nOl" secondAttribute="trailing" id="mJ8-vm-ZeG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-200" y="-116.5"/>
+        </view>
+    </objects>
+</document>
