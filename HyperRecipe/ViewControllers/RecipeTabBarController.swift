@@ -36,6 +36,10 @@ class RecipeTabBarController: UITabBarController {
   
   func showRecipeFormController() {
     print("show recipe form controller")
+    if let recipeController = self.storyboard?.instantiateViewController(withIdentifier: "RecipeFormViewController") as? RecipeFormViewController {
+      self.present(recipeController, animated: true)
+    }
   }
-  
 }
+
+// MARK: - Recipe form delegate

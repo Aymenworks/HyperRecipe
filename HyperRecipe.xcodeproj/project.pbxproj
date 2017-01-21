@@ -18,6 +18,10 @@
 		A5944FC51E335BB100FB4F1D /* CAEmitterRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5944FC41E335BB100FB4F1D /* CAEmitterRecipe.swift */; };
 		A5A8AD2B1E33760B00AD37DC /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A8AD2A1E33760B00AD37DC /* FavoritesViewController.swift */; };
 		A5A8AD2D1E33774500AD37DC /* RecipeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A8AD2C1E33774500AD37DC /* RecipeTabBarController.swift */; };
+		A5A8AD2F1E337F0800AD37DC /* RecipeFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A8AD2E1E337F0800AD37DC /* RecipeFormViewController.swift */; };
+		A5A8AD311E3395C600AD37DC /* DifficultyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5A8AD301E3395C600AD37DC /* DifficultyView.xib */; };
+		A5A8AD331E33973300AD37DC /* DifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A8AD321E33973300AD37DC /* DifficultyView.swift */; };
+		A5A8AD351E33983D00AD37DC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A8AD341E33983D00AD37DC /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		A5944FC41E335BB100FB4F1D /* CAEmitterRecipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CAEmitterRecipe.swift; path = Animations/CAEmitterRecipe.swift; sourceTree = "<group>"; };
 		A5A8AD2A1E33760B00AD37DC /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = ViewControllers/FavoritesViewController.swift; sourceTree = "<group>"; };
 		A5A8AD2C1E33774500AD37DC /* RecipeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeTabBarController.swift; path = ViewControllers/RecipeTabBarController.swift; sourceTree = "<group>"; };
+		A5A8AD2E1E337F0800AD37DC /* RecipeFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeFormViewController.swift; path = ViewControllers/RecipeFormViewController.swift; sourceTree = "<group>"; };
+		A5A8AD301E3395C600AD37DC /* DifficultyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DifficultyView.xib; path = Views/DifficultyView.xib; sourceTree = "<group>"; };
+		A5A8AD321E33973300AD37DC /* DifficultyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DifficultyView.swift; path = Views/DifficultyView.swift; sourceTree = "<group>"; };
+		A5A8AD341E33983D00AD37DC /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExtension.swift; path = Extensions/ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +82,7 @@
 				A514F2AE1E3162B300AC875B /* Models */,
 				A514F2AD1E31629800AC875B /* DependencyInjection */,
 				A514F29B1E31604F00AC875B /* AppDelegate.swift */,
-				A514F29F1E31604F00AC875B /* Main.storyboard */,
 				A514F2A21E31604F00AC875B /* Assets.xcassets */,
-				A514F2A41E31604F00AC875B /* LaunchScreen.storyboard */,
 				A514F2A71E31604F00AC875B /* Info.plist */,
 			);
 			path = HyperRecipe;
@@ -111,6 +117,7 @@
 				A57821801E3350E50089D39D /* BaseViewController.swift */,
 				A5A8AD2A1E33760B00AD37DC /* FavoritesViewController.swift */,
 				A5A8AD2C1E33774500AD37DC /* RecipeTabBarController.swift */,
+				A5A8AD2E1E337F0800AD37DC /* RecipeFormViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -118,6 +125,10 @@
 		A514F2B11E3162C800AC875B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A514F29F1E31604F00AC875B /* Main.storyboard */,
+				A514F2A41E31604F00AC875B /* LaunchScreen.storyboard */,
+				A5A8AD301E3395C600AD37DC /* DifficultyView.xib */,
+				A5A8AD321E33973300AD37DC /* DifficultyView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -126,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				A5944FC11E33537000FB4F1D /* ArrayExtension.swift */,
+				A5A8AD341E33983D00AD37DC /* ColorExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -199,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A514F2A61E31604F00AC875B /* LaunchScreen.storyboard in Resources */,
+				A5A8AD311E3395C600AD37DC /* DifficultyView.xib in Resources */,
 				A514F2A31E31604F00AC875B /* Assets.xcassets in Resources */,
 				A514F2A11E31604F00AC875B /* Main.storyboard in Resources */,
 			);
@@ -216,8 +229,11 @@
 				A5A8AD2B1E33760B00AD37DC /* FavoritesViewController.swift in Sources */,
 				A514F29E1E31604F00AC875B /* ExploreViewController.swift in Sources */,
 				A5944FC21E33537000FB4F1D /* ArrayExtension.swift in Sources */,
+				A5A8AD331E33973300AD37DC /* DifficultyView.swift in Sources */,
+				A5A8AD2F1E337F0800AD37DC /* RecipeFormViewController.swift in Sources */,
 				A5944FC51E335BB100FB4F1D /* CAEmitterRecipe.swift in Sources */,
 				A514F29C1E31604F00AC875B /* AppDelegate.swift in Sources */,
+				A5A8AD351E33983D00AD37DC /* ColorExtension.swift in Sources */,
 				A5A8AD2D1E33774500AD37DC /* RecipeTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
