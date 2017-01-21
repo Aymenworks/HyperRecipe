@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="2957.5999999999999" y="138.98050974512745"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Recipe Tab Bar Controller-->
         <scene sceneID="O4i-K5-uT0">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="I0J-B2-Z1e" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="I0J-B2-Z1e" customClass="RecipeTabBarController" customModule="HyperRecipe" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="nJR-oC-coL"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="PE2-qB-Axi">
