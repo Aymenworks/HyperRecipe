@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red: 243/255, green: 125/255, blue: 57/255, alpha: 1)], for: .selected)
+    UITabBar.appearance().tintColor = UIColor.hyperOrange
 
     return true
   }
