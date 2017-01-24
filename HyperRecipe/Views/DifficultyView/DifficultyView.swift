@@ -7,26 +7,21 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 @IBDesignable
 class DifficultyView: UIView {
   
   // MARK: - Properties
 
-  let minimumLevel = 1
-  let maximumLevel = 3
-  
-  var currentLevel = 2 {
-    didSet {
-      increaseLevelButton.setTitle("\(currentLevel)", for: .normal)
-    }
-  }
+  var levelDidDecrease = PublishSubject<Void>()
+  var levelDidIncrease = PublishSubject<Void>()
   
   var contentView: UIView!
   
   @IBOutlet weak var increaseLevelButton: UIButton! {
     didSet {
-      increaseLevelButton.setTitle("\(currentLevel)", for: .normal)
       increaseLevelButton.layer.cornerRadius = 21.5
     }
   }
@@ -57,10 +52,6 @@ class DifficultyView: UIView {
     if let contentView = loadViewFromNib() {
       contentView.backgroundColor = .clear
       contentView.frame = bounds
-      
-      // Make the view stretch with containing view
-      
-      // Adding custom subview on top of our view (over any custom drawing > see note below)
       addSubview(contentView)
     }
   }
@@ -75,11 +66,12 @@ class DifficultyView: UIView {
   
   // MARK: - User interaction
 
+  
   @IBAction func decreaseLevel(_ sender: Any) {
-    currentLevel = max(minimumLevel, currentLevel-1)
+    levelDidDecrease.onNext()
   }
   
   @IBAction func increaseLevel(_ sender: Any) {
-    currentLevel = min(maximumLevel, currentLevel+1)
+    levelDidIncrease.onNext()
   }
 }
