@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (4.3.0)
+  - Decodable (0.5)
+  - expanding-collection (1.0.4)
+  - RxCocoa (3.1.0):
+    - RxSwift (~> 3.1)
+  - RxSwift (3.1.0)
+  - Swinject (2.0.0)
+  - SwinjectStoryboard (1.0.0):
+    - Swinject (= 2.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - Decodable
+  - expanding-collection (~> 1.0.3)
+  - RxCocoa (~> 3.0)
+  - RxSwift (~> 3.0)
+  - Swinject (~> 2.0.0)
+  - SwinjectStoryboard (~> 1.0.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  Decodable: 7c90acc68d357b71d0d6efc120faf9c53c644b7e
+  expanding-collection: be78b5822d7382d3da02b52d52273f4661567a64
+  RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
+  RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
+  Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
+  SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
+
+PODFILE CHECKSUM: '093c9cec5a7cca9a220c6d2db00cbdfbf7798705'
+
+COCOAPODS: 1.1.1
