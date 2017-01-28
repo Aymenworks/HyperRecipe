@@ -35,19 +35,9 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hi-Fp-dz5" userLabel="Separator">
-                                        <rect key="frame" x="0.0" y="101" width="357" height="1"/>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="uZG-7X-7nm"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="8hi-Fp-dz5" firstAttribute="top" secondItem="f7Z-98-NcB" secondAttribute="bottom" constant="15" id="00k-Xa-Yyl"/>
-                                    <constraint firstItem="8hi-Fp-dz5" firstAttribute="leading" secondItem="f7Z-98-NcB" secondAttribute="leading" id="BAH-SG-jSh"/>
-                                    <constraint firstAttribute="trailing" secondItem="8hi-Fp-dz5" secondAttribute="trailing" id="Ph3-si-hVs"/>
                                     <constraint firstAttribute="trailing" secondItem="f7Z-98-NcB" secondAttribute="trailing" constant="14" id="UmJ-D4-icb"/>
                                     <constraint firstItem="f7Z-98-NcB" firstAttribute="leading" secondItem="P0C-7t-AaD" secondAttribute="leading" id="i7y-4w-OeW"/>
                                     <constraint firstItem="f7Z-98-NcB" firstAttribute="top" secondItem="P0C-7t-AaD" secondAttribute="top" id="wqa-pp-Em4"/>
@@ -73,7 +63,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="267"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uar-NQ-NCR" id="o7X-el-Olo">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="266.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="266"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
@@ -319,7 +309,7 @@
         <scene sceneID="2Tm-zT-VF4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hzb-UT-KQE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="I0w-ha-vsb"/>
+                    <tabBarItem key="tabBarItem" image="recipe" selectedImage="recipe" id="I0w-ha-vsb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uML-9l-rLe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -425,6 +415,7 @@
     <resources>
         <image name="favorite" width="39" height="40"/>
         <image name="favorite-fill" width="39" height="40"/>
+        <image name="recipe" width="34" height="22"/>
         <image name="recipePlaceholder" width="90" height="73"/>
     </resources>
 </document>
