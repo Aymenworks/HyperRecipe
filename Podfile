@@ -6,6 +6,7 @@ target 'HyperRecipe' do
     pod 'RxCocoa',    '~> 3.0'
     pod 'Decodable'
     pod 'Alamofire', '~> 4.0'
+    pod 'AlamofireImage', '~> 3.1'
     pod 'Swinject', '~> 2.0.0'
     pod 'SwinjectStoryboard', '~> 1.0.0'
     pod 'expanding-collection', '~> 1.0.3' 
