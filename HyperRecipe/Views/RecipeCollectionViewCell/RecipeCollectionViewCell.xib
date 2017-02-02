@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D17a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -26,23 +26,37 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.90588235289999997" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Makes an elegant presentation without too much fuss." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGB-1b-0r8">
                                 <rect key="frame" x="20" y="281" width="216" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.19215686269999999" green="0.30588235289999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="VGB-1b-0r8" firstAttribute="top" secondItem="wzq-TV-jTv" secondAttribute="bottom" constant="13" id="5kK-i5-Ne9"/>
-                            <constraint firstAttribute="trailing" secondItem="VGB-1b-0r8" secondAttribute="trailing" constant="20" id="OeM-CR-0E0"/>
+                            <constraint firstItem="VGB-1b-0r8" firstAttribute="top" secondItem="wzq-TV-jTv" secondAttribute="bottom" constant="13" id="5kK-i5-Ne9">
+                                <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="VGB-1b-0r8" secondAttribute="trailing" constant="20" id="OeM-CR-0E0">
+                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                            </constraint>
                             <constraint firstItem="wzq-TV-jTv" firstAttribute="leading" secondItem="FpD-ia-t2e" secondAttribute="leading" constant="20" id="U9x-y8-ncr"/>
-                            <constraint firstAttribute="bottom" secondItem="VGB-1b-0r8" secondAttribute="bottom" constant="25" id="aY6-nZ-qSk"/>
+                            <constraint firstAttribute="bottom" secondItem="VGB-1b-0r8" secondAttribute="bottom" constant="25" id="aY6-nZ-qSk">
+                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                            </constraint>
                             <constraint firstItem="VGB-1b-0r8" firstAttribute="centerX" secondItem="wzq-TV-jTv" secondAttribute="centerX" id="i24-5O-tt8"/>
                             <constraint firstAttribute="trailing" secondItem="wzq-TV-jTv" secondAttribute="trailing" constant="20" id="j5u-qO-mzC"/>
-                            <constraint firstItem="VGB-1b-0r8" firstAttribute="leading" secondItem="FpD-ia-t2e" secondAttribute="leading" constant="20" id="pqS-gj-zEu"/>
+                            <constraint firstItem="VGB-1b-0r8" firstAttribute="leading" secondItem="FpD-ia-t2e" secondAttribute="leading" constant="20" id="pqS-gj-zEu">
+                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                            </constraint>
                             <constraint firstAttribute="width" constant="256" id="rKz-Px-jjy"/>
                             <constraint firstItem="wzq-TV-jTv" firstAttribute="centerX" secondItem="FpD-ia-t2e" secondAttribute="centerX" id="x6o-Yu-vOf"/>
                             <constraint firstAttribute="height" constant="335" id="xJb-gx-mTe"/>
