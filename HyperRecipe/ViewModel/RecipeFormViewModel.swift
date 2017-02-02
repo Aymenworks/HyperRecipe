@@ -34,7 +34,7 @@ struct RecipeFormViewModel {
   
   // MARK: - Network
   
-  func createRecipe(data: [String: Any]) -> Observable<Recipe> {
+  func createRecipe(withData data: [String: Any]) -> Observable<Recipe> {
     return Observable<Recipe>.create { observer in
       self.service.createRecipe(withData: data).subscribe(onNext: { recipe in
         observer.onNext(recipe)
@@ -47,4 +47,16 @@ struct RecipeFormViewModel {
     }
   }
   
+  func updateRecipe(withData data: [String: Any]) -> Observable<Recipe> {
+    return Observable<Recipe>.create { observer in
+      self.service.updateRecipe(withId: self.recipe!.0.id, andData: data).subscribe(onNext: { recipe in
+        observer.onNext(recipe)
+      }, onError: { error in
+        observer.onError(error)
+      }, onCompleted: {
+        observer.onCompleted()
+      }).addDisposableTo(self.disposeBag)
+      return Disposables.create()
+    }
+  }
 }

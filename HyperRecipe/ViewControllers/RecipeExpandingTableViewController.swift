@@ -22,7 +22,8 @@ class RecipeExpandingTableViewController: ExpandingTableViewController {
    Used to replace the delegate and protocol boilerplate.
    */
   var recipeDidDelete = PublishSubject<Recipe>()
-  
+  var recipeDidUpdate = PublishSubject<Recipe>()
+
   // MARK: - Lifecycle
   
   override func viewDidLoad() {
@@ -51,9 +52,11 @@ class RecipeExpandingTableViewController: ExpandingTableViewController {
         recipeController.dismiss(animated: true, completion: nil)
       }).addDisposableTo(disposeBag)
       
-      recipeController.didCreateRecipe.asObserver().subscribe(onNext: { newRecipe in
+      recipeController.didUpdateRecipe.asObserver().subscribe(onNext: { updatedRecipe in
+        self.recipe.0 = updatedRecipe
+        self.recipeDidUpdate.onNext(updatedRecipe)
+        self.tableView.reloadData()
         recipeController.dismiss(animated: true, completion: nil)
-      
       }).addDisposableTo(disposeBag)
       
       self.present(recipeController, animated: true)

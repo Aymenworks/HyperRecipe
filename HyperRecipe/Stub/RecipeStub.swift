@@ -42,15 +42,11 @@ struct RecipeStub: RecipeAPI {
 
   }
   
-  func updateRecipe(id: Int, updatedRecipe: [String: Any]) -> Observable<Recipe> {
+  func updateRecipe(withId id: Int, andData data: [String: Any]) -> Observable<Recipe> {
     return Observable<Recipe>.create { observer in
       do {
-        let pathString = Bundle.main.path(forResource: "updateRecipe", ofType: "json")!
-        let data = try Data(contentsOf: URL(fileURLWithPath: pathString))
-        let json = try JSONSerialization.jsonObject(with: data, options: [])
-        let recipes = try Recipe.decode(json)
-        let recipesResult: Result<Recipe> = .success(recipes)
-        observer.onNext(recipesResult.value!)
+        let recipe = Recipe(id: id, name: data["recipeName"] as! String, description: (data["recipeDescription"] as? String) ?? "zeofezofk ezok ezok ez,so kdzotj", instructions: (data["recipeInstructions"] as? String) ?? "dokzodk zok zork zo,zo dzo jzfj ozkd ozkd ozkoez ozn sozks ozk", favorite: data["recipeFavorite"] as! Bool, difficulty: data["recipeDifficulty"] as! Int, createdDate: "2014-09-29T10:43:00.072Z", updatedDate: "2014-09-29T10:43:00.072Z", photo: Photo(url: "", thumbnailUrl: ""))
+        observer.onNext(recipe)
         
       } catch {
         print(error)

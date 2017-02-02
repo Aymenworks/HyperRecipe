@@ -16,6 +16,7 @@ class RecipeFormViewController: UIViewController {
   // MARK: - Properties
   
   let disposeBag = DisposeBag()
+  var viewModel: RecipeFormViewModel!
   var minY: CGFloat!
   var keyboardHeight: CGFloat!
   var finishGesture = false
@@ -55,8 +56,6 @@ class RecipeFormViewController: UIViewController {
       formView.layer.shadowOpacity = 1.0
     }
   }
-  
-  var viewModel: RecipeFormViewModel!
   
   // MARK: - Lifecycle
   
@@ -180,7 +179,7 @@ class RecipeFormViewController: UIViewController {
       }
       
       if self.viewModel.recipe == nil {
-        self.viewModel.createRecipe(data: data)
+        self.viewModel.createRecipe(withData: data)
           .asObservable()
           .subscribe(onNext: { createdRecipe in
             print("recipe created = \(createdRecipe)")
@@ -191,7 +190,14 @@ class RecipeFormViewController: UIViewController {
         
         // It's an update
       } else {
-        
+        self.viewModel.updateRecipe(withData: data)
+          .asObservable()
+          .subscribe(onNext: { updatedRecipe in
+            print("recipe updated = \(updatedRecipe)")
+            self.didUpdateRecipe.onNext(updatedRecipe)
+          }, onError: { error in
+            print("error \(error)")
+          }).addDisposableTo(self.disposeBag)
       }
     }).addDisposableTo(disposeBag)
     

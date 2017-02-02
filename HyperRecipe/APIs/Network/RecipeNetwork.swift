@@ -65,11 +65,11 @@ struct RecipeNetwork: RecipeAPI {
     }
   }
   
-  func updateRecipe(id: Int, updatedRecipe: [String: Any]) -> Observable<Recipe> {
+  func updateRecipe(withId id: Int, andData data: [String: Any]) -> Observable<Recipe> {
     return Observable<Recipe>.create { observer in
       UIApplication.shared.isNetworkActivityIndicatorVisible = true
       
-      request(RecipeRouter.put(id, updatedRecipe))
+      request(RecipeRouter.put(id, data))
         .responseJSON { jsonResponse in
           
           UIApplication.shared.isNetworkActivityIndicatorVisible = false

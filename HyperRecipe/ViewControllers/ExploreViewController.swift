@@ -106,7 +106,7 @@ extension ExploreViewController {
     
     let recipe = viewModel.recipes[indexPath.row]
     cell.recipe = recipe
-    
+
     return cell
   }
   
@@ -115,6 +115,7 @@ extension ExploreViewController {
     
     if let cell = cell as? RecipeCollectionViewCell {
       
+      cell.cellIsOpen(openCells[indexPath.row])
       let recipe = viewModel.recipes[indexPath.row]
       
       if let imagedCached = cachedImages[indexPath.row] {
@@ -170,6 +171,12 @@ extension ExploreViewController {
             self.viewModel.recipes.remove(at: indexPath.row)
             self.collectionView?.deleteItems(at: [indexPath])
           }
+        }).addDisposableTo(disposeBag)
+      
+      tableController.recipeDidUpdate.asObservable()
+        .subscribe(onNext: { recipe in
+          self.viewModel.recipes[indexPath.row] = recipe
+          self.collectionView?.reloadItems(at: [indexPath])
         }).addDisposableTo(disposeBag)
       pushToViewController(tableController)
     }
