@@ -13,6 +13,6 @@ import RxCocoa
 protocol RecipeAPI {
   func getAllRecipes() -> Observable<[Recipe]>
   func deleteRecipe(id: Int) -> Observable<()>
-  func updateRecipe(id: Int, updatedRecipe: Recipe) -> Observable<Recipe>
-  func createRecipe(recipe: Recipe) -> Observable<Recipe>
+  func updateRecipe(id: Int, updatedRecipe: [String: Any]) -> Observable<Recipe>
+  func createRecipe(withData data: [String: Any]) -> Observable<Recipe>
 }

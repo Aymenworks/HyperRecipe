@@ -16,8 +16,8 @@ enum RecipeRouter {
   
   case get
   case delete(Int)
-  case put(Int, Recipe)
-  case post(Recipe)
+  case put(Int, [String: Any])
+  case post([String: Any])
   
   var url: URL { return RecipeRouter.baseURL.appendingPathComponent(route.path) }
   
@@ -25,8 +25,8 @@ enum RecipeRouter {
     switch self {
     case .get: return ("/", nil)
     case .delete(let id): return ("/\(id)", nil)
-    case .put(let id, let recipe): return ("/\(id)", ["name": recipe.name])
-    case .post: return ("/", nil)
+    case .put(let id, let parameters): return ("/\(id)", parameters)
+    case .post(let parameters): return ("/", parameters)
     }
   }
 }

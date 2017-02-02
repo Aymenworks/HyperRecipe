@@ -42,7 +42,7 @@ struct RecipeStub: RecipeAPI {
 
   }
   
-  func updateRecipe(id: Int, updatedRecipe: Recipe) -> Observable<Recipe> {
+  func updateRecipe(id: Int, updatedRecipe: [String: Any]) -> Observable<Recipe> {
     return Observable<Recipe>.create { observer in
       do {
         let pathString = Bundle.main.path(forResource: "updateRecipe", ofType: "json")!
@@ -61,20 +61,10 @@ struct RecipeStub: RecipeAPI {
     }
   }
   
-  func createRecipe(recipe: Recipe) -> Observable<Recipe> {
+  func createRecipe(withData data: [String: Any]) -> Observable<Recipe> {
     return Observable<Recipe>.create { observer in
-      do {
-        let pathString = Bundle.main.path(forResource: "createRecipe", ofType: "json")!
-        let data = try Data(contentsOf: URL(fileURLWithPath: pathString))
-        let json = try JSONSerialization.jsonObject(with: data, options: [])
-        let recipes = try Recipe.decode(json)
-        let recipesResult: Result<Recipe> = .success(recipes)
-        observer.onNext(recipesResult.value!)
-        
-      } catch {
-        print(error)
-        observer.onError(error)
-      }
+        let recipe = Recipe(id: 4, name: data["recipeName"] as! String, description: (data["recipeDescription"] as? String) ?? "zeofezofk ezok ezok ez,so kdzotj", instructions: (data["recipeInstructions"] as? String) ?? "dokzodk zok zork zo,zo dzo jzfj ozkd ozkd ozkoez ozn sozks ozk", favorite: data["recipeFavorite"] as! Bool, difficulty: data["recipeDifficulty"] as! Int, createdDate: "2014-09-29T10:43:00.072Z", updatedDate: "2014-09-29T10:43:00.072Z", photo: Photo(url: "", thumbnailUrl: ""))
+        observer.onNext(recipe)
       
       return Disposables.create()
     }
