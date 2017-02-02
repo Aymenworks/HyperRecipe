@@ -421,10 +421,10 @@
                                 <rect key="frame" x="0.0" y="94" width="414" height="593"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EdH-F3-mxD" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="-94" width="414" height="600.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="-94" width="414" height="316.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aC-FO-kag">
-                                                <rect key="frame" x="20" y="20" width="374" height="510.33333333333337"/>
+                                                <rect key="frame" x="20" y="20.000000000000014" width="374" height="226.33333333333337"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="My name is ">
                                                         <attributes>
@@ -445,15 +445,7 @@
                                                         <string key="content"> and I’m interested by an iOS engineering position starting September-October 2017
 
 I’m currently a french computer science student in Sandwich course switching 
-between school and company every month from September 2014 to September 2017 where I work as an iOS  developer at the company.
-
-I appreciate iOS, UI and UX : As time 
-gone on, I have been more and more 
-interested by this world of design and user experience. Today, I have two apps in the 
-App Store where I focused on the UI and UX. 
-
-Open source contributor : When developing 
-side projects, sometimes I create custom UI components. Whenever I can, I try to make those reusable and deploy those in my github account.</string>
+between school and company every month from September 2014 to September 2017 where I work as an iOS  developer at the company.</string>
                                                         <attributes>
                                                             <font key="NSFont" size="17" name="SFUIText-Regular"/>
                                                             <font key="NSOriginalFont" size="17" name="SFUIText-Regular"/>
@@ -464,7 +456,7 @@ side projects, sometimes I create custom UI components. Whenever I can, I try to
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5c-NJ-Pvw">
-                                                <rect key="frame" x="20" y="550.33333333333337" width="100" height="30"/>
+                                                <rect key="frame" x="20" y="266.33333333333331" width="100" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="zFx-cs-xpu"/>
                                                 </constraints>
