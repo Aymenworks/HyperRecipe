@@ -11,17 +11,23 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class RecipeFormViewController: BaseViewController {
+class RecipeFormViewController: UIViewController {
   
   // MARK: - Properties
   
+  let disposeBag = DisposeBag()
+  var minY: CGFloat!
+  var keyboardHeight: CGFloat!
+  var finishGesture = false
+  var isKeyboardVisible = false
+  
   /*
-    Used to replace the delegate and protocol boilerplate. 
-    Those are properties observed by the RecipeTabBarController
-  */
+   Used to replace the delegate and protocol boilerplate.
+   */
   var formDidCancel = PublishSubject<Void>()
   var didCreateRecipe = PublishSubject<Recipe>()
-  
+  var didUpdateRecipe = PublishSubject<Recipe>()
+
   @IBOutlet weak var recipeNameTextField: UITextField!
   @IBOutlet weak var difficultyView: DifficultyView!
   @IBOutlet weak var cancelButton: UIButton!
@@ -29,29 +35,98 @@ class RecipeFormViewController: BaseViewController {
   @IBOutlet weak var favoriteButton: UIButton!
   @IBOutlet weak var instructionsTextView: UITextView!
   @IBOutlet weak var descriptionTextView: UITextView!
-  @IBOutlet weak var pickImageButton: UIButton!
+  
+  @IBOutlet weak var pickImageButton: UIButton! {
+    didSet {
+      pickImageButton.layer.cornerRadius = 4.0
+      pickImageButton.layer.masksToBounds = true
+      pickImageButton.imageView?.contentMode = .scaleAspectFill
+    }
+  }
+  
   @IBOutlet weak var formBottomConstraint: NSLayoutConstraint!
   
   @IBOutlet weak var formView: UIView! {
     didSet {
       formView.layer.cornerRadius = 8
+      formView.layer.shadowColor = UIColor.white.cgColor
+      formView.layer.shadowOffset = .zero
+      formView.layer.shadowRadius = 3.0
+      formView.layer.shadowOpacity = 1.0
     }
   }
   
-  var viewModel = RecipeFormViewModel()
+  var viewModel: RecipeFormViewModel!
   
   // MARK: - Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
-  }
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
     
+    bindViewModel()
+    
+    if let recipe = viewModel.recipe {
+      self.createButton.setTitle("Update", for: .normal)
+      self.recipeNameTextField.text = recipe.0.name
+      self.descriptionTextView.text = recipe.0.description
+      self.instructionsTextView.text = recipe.0.instructions
+      self.viewModel.currentLevel.value = recipe.0.difficulty
+      self.favoriteButton.isSelected = recipe.0.favorite
+      
+      if let image = recipe.1 {
+        self.pickImageButton.setImage(image, for: .normal)
+      }
+    }
     recipeNameTextField.becomeFirstResponder()
+    
+    let touchGesture = UIPanGestureRecognizer(target: self, action: #selector(RecipeFormViewController.moveForm(_:)))
+    touchGesture.maximumNumberOfTouches = 1
+    formView.addGestureRecognizer(touchGesture)
   }
   
-  override func bindViewModel() {
+  func moveForm(_ sender: UIPanGestureRecognizer) {
+    
+    if sender.state == .ended && !finishGesture {
+      self.view.layoutIfNeeded()
+      UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
+        if self.isKeyboardVisible {
+          self.formBottomConstraint.constant = self.keyboardHeight + 15.0
+        } else {
+          self.formBottomConstraint.constant = self.view.bounds.height / 2.0 - self.formView.bounds.height / 2.0
+        }
+        self.view.layoutIfNeeded()
+      }, completion: nil)
+      
+    } else if self.formView.frame.minY > self.view.bounds.height / 2.0 {
+      self.finishGesture = true
+      self.view.endEditing(true)
+      self.view.layoutIfNeeded()
+      UIView.animate(withDuration: 0.5, animations: {
+        
+        self.formBottomConstraint.constant = -400
+        self.view.layoutIfNeeded()
+      }) { finish in
+        if finish {
+          DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.formDidCancel.onNext()
+          }
+        }
+      }
+      
+    } else  {
+      let location = sender.location(in: view)
+      if location.y > self.minY {
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.5) {
+          self.formBottomConstraint.constant = self.view.bounds.height - self.formView.bounds.height - location.y
+          self.view.layoutIfNeeded()
+        }
+      }
+    }
+  }
+  
+  
+  func bindViewModel() {
     viewModel.currentLevel
       .asDriver()
       .distinctUntilChanged()
@@ -60,21 +135,64 @@ class RecipeFormViewController: BaseViewController {
         self.difficultyView.increaseLevelButton.setTitle(val, for: .normal)
       }).addDisposableTo(disposeBag)
     
-    /*
-     recipeNameTextField.rx.text.orEmpty.asDriver()
-     instructionsTextView.rx.text.orEmpty.asDriver()
-     descriptionTextView.rx.text.orEmpty.asDriver()
-     */
     pickImageButton.rx.tap.asDriver().drive(onNext: {
-      // pick photo controller
+      let imagePickerController = UIImagePickerController()
+      imagePickerController.delegate = self
+      self.view.endEditing(true)
+      self.present(imagePickerController, animated: true) {
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.5) {
+          self.formBottomConstraint.constant = self.view.bounds.height / 2.0 - self.formView.bounds.height / 2.0
+          self.view.layoutIfNeeded()
+        }
+      }
     }).addDisposableTo(disposeBag)
     
     favoriteButton.rx.tap.asDriver().drive(onNext: {
-      // selected or not
+      self.favoriteButton.isSelected = !self.favoriteButton.isSelected
     }).addDisposableTo(disposeBag)
     
     cancelButton.rx.tap.asDriver().drive(onNext: {
       self.formDidCancel.onNext()
+    }).addDisposableTo(disposeBag)
+    
+    createButton.rx.tap.asDriver().drive(onNext: {
+      /* I used a dict because too many params and if the recipe has 10 more properties, it would be non readabl
+       Also, I can't use the Recipe struct because it doesn't have the photo UIImage type and optionals values.
+       Does it make sense to change the Recipe struct properties type for this case ? I don't think so, so I just inspired
+       myself from Apple way of doing things ( you find dict on notification for example
+       */
+      var data: [String: Any] = [
+        "recipeName": self.recipeNameTextField.text!,
+        "recipeDifficulty": self.viewModel.currentLevel.value,
+        "recipeFavorite": self.favoriteButton.isSelected]
+      
+      if let recipePhoto = self.pickImageButton.imageView?.image {
+        data["recipePhoto"] = recipePhoto
+      }
+      
+      if let recipeDescription = self.descriptionTextView.text, !recipeDescription.isEmpty {
+        data["recipeDescription"] = recipeDescription
+      }
+      
+      if let recipeInstructions = self.instructionsTextView.text, !recipeInstructions.isEmpty {
+        data["recipeInstructions"] = recipeInstructions
+      }
+      
+      if self.viewModel.recipe == nil {
+        self.viewModel.createRecipe(data: data)
+          .asObservable()
+          .subscribe(onNext: { createdRecipe in
+            print("recipe created = \(createdRecipe)")
+            self.didCreateRecipe.onNext(createdRecipe)
+          }, onError: { error in
+            print("error \(error)")
+          }).addDisposableTo(self.disposeBag)
+        
+        // It's an update
+      } else {
+        
+      }
     }).addDisposableTo(disposeBag)
     
     difficultyView.levelDidIncrease.asObservable().subscribe(onNext: {
@@ -85,6 +203,47 @@ class RecipeFormViewController: BaseViewController {
       self.viewModel.currentLevel.value = max(self.viewModel.currentLevel.value - 1, self.viewModel.minimumLevel)
     }).addDisposableTo(disposeBag)
     
+    // Only the recipe name and the level are obligatory ( the level is by default )
+    let validRecipeName = recipeNameTextField.rx.text.orEmpty.map(viewModel.notEmpty).asDriver(onErrorJustReturn: false)
+    validRecipeName.drive(createButton.rx.isEnabled).addDisposableTo(disposeBag)
+    
+    NotificationCenter.default
+      .rx.notification(.UIKeyboardWillShow)
+      .asObservable()
+      .subscribe(onNext: { notification in
+        self.isKeyboardVisible = true
+        let keyboardFrame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as! CGRect
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.5) {
+          self.keyboardHeight = keyboardFrame.height
+          self.formBottomConstraint.constant = keyboardFrame.height + 15.0
+          self.minY = self.view.bounds.height - keyboardFrame.height - 15.0 - self.formView.bounds.height
+          self.view.layoutIfNeeded()
+        }
+      }).addDisposableTo(disposeBag)
+    
+    NotificationCenter.default
+      .rx.notification(.UITextFieldTextDidEndEditing)
+      .asObservable()
+      .subscribe(onNext: { notification in
+        self.isKeyboardVisible = false
+        self.view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.5) {
+          self.formBottomConstraint.constant = self.view.bounds.height / 2.0 - self.formView.bounds.height / 2.0
+          self.view.layoutIfNeeded()
+        }
+      }).addDisposableTo(disposeBag)
+  }
+}
 
+// MARK: - Image Picker Delegate
+
+extension RecipeFormViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    picker.dismiss(animated: true, completion: nil)
+    if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+      pickImageButton.setImage(pickedImage, for: .normal)
+    }
   }
 }
