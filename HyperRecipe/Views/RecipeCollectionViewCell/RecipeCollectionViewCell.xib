@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D17a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecipeCollectionViewCell" id="9pL-41-Z1b" customClass="RecipeCollectionViewCell" customModule="HyperRecipe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="256" height="335"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="256" height="335"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpD-ia-t2e" userLabel="Back Container View">
+                        <rect key="frame" x="0.0" y="0.0" width="256" height="335"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strawberries and Cream Cake" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzq-TV-jTv">
+                                <rect key="frame" x="20" y="222.5" width="216" height="45.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <color key="textColor" red="0.91372549020000005" green="0.90588235289999997" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Makes an elegant presentation without too much fuss." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGB-1b-0r8">
+                                <rect key="frame" x="20" y="281" width="216" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.19215686269999999" green="0.30588235289999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="VGB-1b-0r8" firstAttribute="top" secondItem="wzq-TV-jTv" secondAttribute="bottom" constant="13" id="5kK-i5-Ne9"/>
+                            <constraint firstAttribute="trailing" secondItem="VGB-1b-0r8" secondAttribute="trailing" constant="20" id="OeM-CR-0E0"/>
+                            <constraint firstItem="wzq-TV-jTv" firstAttribute="leading" secondItem="FpD-ia-t2e" secondAttribute="leading" constant="20" id="U9x-y8-ncr"/>
+                            <constraint firstAttribute="bottom" secondItem="VGB-1b-0r8" secondAttribute="bottom" constant="25" id="aY6-nZ-qSk"/>
+                            <constraint firstItem="VGB-1b-0r8" firstAttribute="centerX" secondItem="wzq-TV-jTv" secondAttribute="centerX" id="i24-5O-tt8"/>
+                            <constraint firstAttribute="trailing" secondItem="wzq-TV-jTv" secondAttribute="trailing" constant="20" id="j5u-qO-mzC"/>
+                            <constraint firstItem="VGB-1b-0r8" firstAttribute="leading" secondItem="FpD-ia-t2e" secondAttribute="leading" constant="20" id="pqS-gj-zEu"/>
+                            <constraint firstAttribute="width" constant="256" id="rKz-Px-jjy"/>
+                            <constraint firstItem="wzq-TV-jTv" firstAttribute="centerX" secondItem="FpD-ia-t2e" secondAttribute="centerX" id="x6o-Yu-vOf"/>
+                            <constraint firstAttribute="height" constant="335" id="xJb-gx-mTe"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQV-Na-8fJ" userLabel="Front Container View">
+                        <rect key="frame" x="0.0" y="0.0" width="256" height="335"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipeBackgroundPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="qRZ-7a-OfS">
+                                <rect key="frame" x="0.0" y="0.0" width="256" height="335"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flagFavorite-selected" translatesAutoresizingMaskIntoConstraints="NO" id="iq1-Lb-Nb3">
+                                <rect key="frame" x="217" y="0.0" width="24" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="BhD-kH-9o4"/>
+                                    <constraint firstAttribute="width" constant="24" id="Ezs-UX-CjB"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="256" id="IA4-si-0pP"/>
+                            <constraint firstItem="qRZ-7a-OfS" firstAttribute="top" secondItem="pQV-Na-8fJ" secondAttribute="top" id="KkQ-IS-s7z"/>
+                            <constraint firstItem="iq1-Lb-Nb3" firstAttribute="top" secondItem="pQV-Na-8fJ" secondAttribute="top" id="Omg-RO-UpT"/>
+                            <constraint firstAttribute="bottom" secondItem="qRZ-7a-OfS" secondAttribute="bottom" id="Qyy-8N-xmp"/>
+                            <constraint firstItem="qRZ-7a-OfS" firstAttribute="leading" secondItem="pQV-Na-8fJ" secondAttribute="leading" id="Wpd-pW-Oxc"/>
+                            <constraint firstAttribute="height" constant="335" id="ZMZ-ij-ITK"/>
+                            <constraint firstAttribute="trailing" secondItem="iq1-Lb-Nb3" secondAttribute="trailing" constant="15" id="jmo-SJ-ogs"/>
+                            <constraint firstAttribute="trailing" secondItem="qRZ-7a-OfS" secondAttribute="trailing" id="lXm-Sd-8cR"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="pQV-Na-8fJ" firstAttribute="centerX" secondItem="9pL-41-Z1b" secondAttribute="centerX" id="Jfd-1c-7ZU"/>
+                <constraint firstItem="FpD-ia-t2e" firstAttribute="centerX" secondItem="9pL-41-Z1b" secondAttribute="centerX" id="P1O-hI-lVj"/>
+                <constraint firstItem="FpD-ia-t2e" firstAttribute="centerY" secondItem="9pL-41-Z1b" secondAttribute="centerY" id="dJG-6A-Kgu"/>
+                <constraint firstItem="pQV-Na-8fJ" firstAttribute="centerY" secondItem="9pL-41-Z1b" secondAttribute="centerY" id="nWF-h3-N0V"/>
+            </constraints>
+            <connections>
+                <outlet property="backConstraintY" destination="dJG-6A-Kgu" id="hGU-I8-f3W"/>
+                <outlet property="backContainerView" destination="FpD-ia-t2e" id="fKM-DW-Arw"/>
+                <outlet property="descriptionLabel" destination="VGB-1b-0r8" id="pXd-1c-utN"/>
+                <outlet property="flagFavorite" destination="iq1-Lb-Nb3" id="uac-Kf-lmF"/>
+                <outlet property="frontConstraintY" destination="nWF-h3-N0V" id="nCf-Ba-25U"/>
+                <outlet property="frontContainerView" destination="pQV-Na-8fJ" id="TVw-lP-6wp"/>
+                <outlet property="recipeImageView" destination="qRZ-7a-OfS" id="rIP-jl-Nc9"/>
+                <outlet property="titleLabel" destination="wzq-TV-jTv" id="zMT-WN-ork"/>
+            </connections>
+            <point key="canvasLocation" x="102" y="-215"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="flagFavorite-selected" width="72" height="123"/>
+        <image name="recipeBackgroundPlaceholder" width="227" height="301"/>
+    </resources>
+</document>

@@ -26,7 +26,7 @@
                     <navigationItem key="navigationItem" prompt=" " id="SbY-G0-FED">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="64N-t1-Jfr">
                             <view key="customView" contentMode="scaleToFill" id="P0C-7t-AaD">
-                                <rect key="frame" x="16" y="20" width="357" height="63"/>
+                                <rect key="frame" x="20" y="20" width="357" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore the Hyper Recipes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7Z-98-NcB">
@@ -44,6 +44,9 @@
                                 </constraints>
                             </view>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hSZ-nB-3Ki">
+                            <color key="tintColor" red="0.9993975759" green="0.665681839" blue="0.227565825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -60,15 +63,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeDetailHeaderSectionCell" rowHeight="80" id="Uar-NQ-NCR" customClass="RecipeDetailHeaderSectionCell" customModule="HyperRecipe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="RecipeDetailHeaderSectionCell" rowHeight="85" id="Uar-NQ-NCR" customClass="RecipeDetailHeaderSectionCell" customModule="HyperRecipe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uar-NQ-NCR" id="o7X-el-Olo">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red berries tartlet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQJ-fY-ia5">
-                                            <rect key="frame" x="10" y="0.0" width="394" height="80"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red berries tartlet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQJ-fY-ia5">
+                                            <rect key="frame" x="10" y="0.0" width="394" height="85"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -86,8 +89,8 @@
                                     <outlet property="titleLabel" destination="jQJ-fY-ia5" id="0Cs-H6-EXB"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeDetailSectionCell" rowHeight="125" id="bRE-KZ-Omo" customClass="RecipeDetailSectionCell" customModule="HyperRecipe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="108" width="414" height="125"/>
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeDetailSectionCell" rowHeight="125" id="bRE-KZ-Omo" customClass="RecipeDetailSectionCell" customModule="HyperRecipe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="113" width="414" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bRE-KZ-Omo" id="OvF-u1-zCm">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
@@ -115,7 +118,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="These light sweet pastry and crème pâtissière tarts are simple to make and look stunning. Use your own favourite fruits." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aby-mB-Pko">
                                                     <rect key="frame" x="20" y="31" width="354" height="64"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -161,7 +163,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWr-b1-T6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4624.8000000000002" y="187.55622188905548"/>
+            <point key="canvasLocation" x="3738" y="-555"/>
         </scene>
         <!--Recipe Form View Controller-->
         <scene sceneID="Kdo-Az-NN3">
@@ -181,20 +183,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
-                                <blurEffect style="dark"/>
+                                <color key="backgroundColor" red="0.9993975759" green="0.665681839" blue="0.227565825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <blurEffect style="light"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tI2-tf-POd">
-                                <rect key="frame" x="20" y="536" width="374" height="372"/>
+                                <rect key="frame" x="20" y="736" width="374" height="400"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZa-F2-gEI" userLabel="Pick a picture">
-                                        <rect key="frame" x="20" y="20" width="90" height="67"/>
+                                        <rect key="frame" x="20" y="20" width="95" height="95"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="IbV-X6-F3T"/>
+                                            <constraint firstAttribute="width" constant="95" id="IbV-X6-F3T"/>
                                         </constraints>
                                         <state key="normal" image="recipePlaceholder"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESCRIPTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zzk-BL-0iF">
-                                        <rect key="frame" x="20" y="165" width="334" height="21"/>
+                                        <rect key="frame" x="20" y="193" width="334" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="mmx-b9-IHA"/>
                                         </constraints>
@@ -203,24 +206,24 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8dP-c7-vfB">
-                                        <rect key="frame" x="20" y="193" width="334" height="43"/>
+                                        <rect key="frame" x="20" y="221" width="334" height="43"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.9993975759" green="0.665681839" blue="0.227565825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="f3f-sI-Tep"/>
                                         </constraints>
-                                        <color key="textColor" red="0.19215686269999999" green="0.30588235289999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZb-Bi-gFc" userLabel="Separator description">
-                                        <rect key="frame" x="20" y="145" width="354" height="1"/>
-                                        <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="20" y="173" width="354" height="1"/>
+                                        <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="zX4-VC-Igg"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTRUCTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uks-nP-QBa">
-                                        <rect key="frame" x="20" y="244" width="82" height="21"/>
+                                        <rect key="frame" x="20" y="272" width="82" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="wzT-Rf-JEd"/>
                                         </constraints>
@@ -229,23 +232,23 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIFFICULTY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8og-Fb-eZt">
-                                        <rect key="frame" x="286" y="244" width="68" height="21"/>
+                                        <rect key="frame" x="286" y="272" width="68" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.19215686269999999" green="0.30588235289999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eHh-iV-1QU">
-                                        <rect key="frame" x="20" y="273" width="235" height="43"/>
+                                        <rect key="frame" x="20" y="301" width="235" height="43"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.9993975759" green="0.665681839" blue="0.227565825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="hhF-n2-BGy"/>
                                         </constraints>
-                                        <color key="textColor" red="0.19215686269999999" green="0.30588235289999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgA-gE-YHx">
-                                        <rect key="frame" x="20" y="332" width="72" height="30"/>
+                                        <rect key="frame" x="20" y="360" width="72" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="INt-dk-L6w"/>
                                         </constraints>
@@ -255,7 +258,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yb-mO-xXt">
-                                        <rect key="frame" x="290" y="332" width="69" height="30"/>
+                                        <rect key="frame" x="290" y="360" width="69" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="cuj-lU-dxE"/>
                                         </constraints>
@@ -263,9 +266,12 @@
                                         <state key="normal" title="Create">
                                             <color key="titleColor" red="0.95294117649999999" green="0.49019607840000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nmg-ON-wpf" customClass="DifficultyView" customModule="HyperRecipe" customModuleProvider="target">
-                                        <rect key="frame" x="278" y="273" width="76" height="43"/>
+                                        <rect key="frame" x="278" y="301" width="76" height="43"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="WDt-Df-1wl"/>
@@ -273,15 +279,16 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Recipe name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M1R-py-H1s">
-                                        <rect key="frame" x="20" y="107" width="334" height="30"/>
+                                        <rect key="frame" x="20" y="135" width="334" height="30"/>
+                                        <color key="tintColor" red="0.9993975759" green="0.665681839" blue="0.227565825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Bct-J0-LS9"/>
                                         </constraints>
-                                        <color key="textColor" red="0.19215686269999999" green="0.30588235289999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MvH-i5-n8f" userLabel="flagFavorite">
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MvH-i5-n8f" userLabel="flagFavorite">
                                         <rect key="frame" x="330" y="0.0" width="24" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="LVm-Da-Uxt"/>
@@ -318,7 +325,7 @@
                                     <constraint firstItem="8og-Fb-eZt" firstAttribute="top" secondItem="8dP-c7-vfB" secondAttribute="bottom" constant="8" id="lHf-xT-833"/>
                                     <constraint firstItem="Zzk-BL-0iF" firstAttribute="top" secondItem="MZb-Bi-gFc" secondAttribute="bottom" constant="19" id="mto-3A-HSJ"/>
                                     <constraint firstItem="MZb-Bi-gFc" firstAttribute="leading" secondItem="M1R-py-H1s" secondAttribute="leading" id="uoL-gY-0w8"/>
-                                    <constraint firstAttribute="height" constant="372" id="vLg-0O-OoR"/>
+                                    <constraint firstAttribute="height" constant="400" id="vLg-0O-OoR"/>
                                     <constraint firstItem="eHh-iV-1QU" firstAttribute="leading" secondItem="uks-nP-QBa" secondAttribute="leading" id="vTz-HT-Iqp"/>
                                     <constraint firstItem="8dP-c7-vfB" firstAttribute="top" secondItem="Zzk-BL-0iF" secondAttribute="bottom" constant="7" id="wK7-eg-OZF"/>
                                     <constraint firstItem="M1R-py-H1s" firstAttribute="leading" secondItem="tI2-tf-POd" secondAttribute="leading" constant="20" id="wSZ-75-OfS"/>
@@ -334,7 +341,7 @@
                             <constraint firstItem="tI2-tf-POd" firstAttribute="trailing" secondItem="ZEz-JR-9xD" secondAttribute="trailingMargin" id="3bV-8o-wcU"/>
                             <constraint firstItem="76H-zs-S5P" firstAttribute="leading" secondItem="ZEz-JR-9xD" secondAttribute="leading" id="46q-gW-82c"/>
                             <constraint firstItem="76H-zs-S5P" firstAttribute="top" secondItem="zen-FS-MFq" secondAttribute="bottom" constant="-20" id="6WI-kH-0Mo"/>
-                            <constraint firstItem="wOB-Y5-BKi" firstAttribute="top" secondItem="tI2-tf-POd" secondAttribute="bottom" constant="-172" id="QBP-1E-LyK"/>
+                            <constraint firstItem="wOB-Y5-BKi" firstAttribute="top" secondItem="tI2-tf-POd" secondAttribute="bottom" constant="-400" id="QBP-1E-LyK"/>
                             <constraint firstItem="tI2-tf-POd" firstAttribute="leading" secondItem="ZEz-JR-9xD" secondAttribute="leadingMargin" id="a1i-x9-FMH"/>
                             <constraint firstAttribute="trailing" secondItem="76H-zs-S5P" secondAttribute="trailing" id="imD-i0-ftV"/>
                             <constraint firstItem="wOB-Y5-BKi" firstAttribute="top" secondItem="76H-zs-S5P" secondAttribute="bottom" id="tID-Sr-5rr"/>
@@ -357,10 +364,10 @@
             </objects>
             <point key="canvasLocation" x="5444.9275362318849" y="171.19565217391306"/>
         </scene>
-        <!--Recipe Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="O4i-K5-uT0">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="I0J-B2-Z1e" customClass="RecipeTabBarController" customModule="HyperRecipe" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="I0J-B2-Z1e" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="nJR-oC-coL"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="PE2-qB-Axi">
@@ -423,46 +430,7 @@
                                                         <attributes>
                                                             <font key="NSFont" size="17" name="SFUIText-Regular"/>
                                                             <font key="NSOriginalFont" size="17" name="SFUIText-Regular"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="6" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                                <tabStops>
-                                                                    <textTab alignment="left" location="28">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="56">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="84">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="112">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="140">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="168">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="196">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="224">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="252">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="280">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="308">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="336">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                </tabStops>
-                                                            </paragraphStyle>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="6" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment content="Aymen Rebouh">
@@ -470,50 +438,11 @@
                                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <font key="NSFont" size="17" name="SFUIText-Regular"/>
                                                             <font key="NSOriginalFont" size="17" name="SFUIText-Bold"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="6" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                                <tabStops>
-                                                                    <textTab alignment="left" location="28">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="56">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="84">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="112">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="140">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="168">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="196">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="224">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="252">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="280">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="308">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="336">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                </tabStops>
-                                                            </paragraphStyle>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="6" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment>
-                                                        <mutableString key="content"> and I’m interested by an iOS engineering position starting September-October 2017
+                                                        <string key="content"> and I’m interested by an iOS engineering position starting September-October 2017
 
 I’m currently a french computer science student in Sandwich course switching 
 between school and company every month from September 2014 to September 2017 where I work as an iOS  developer at the company.
@@ -524,50 +453,11 @@ interested by this world of design and user experience. Today, I have two apps i
 App Store where I focused on the UI and UX. 
 
 Open source contributor : When developing 
-side projects, sometimes I create custom UI components. Whenever I can, I try to make those reusable and deploy those in my github account.</mutableString>
+side projects, sometimes I create custom UI components. Whenever I can, I try to make those reusable and deploy those in my github account.</string>
                                                         <attributes>
                                                             <font key="NSFont" size="17" name="SFUIText-Regular"/>
                                                             <font key="NSOriginalFont" size="17" name="SFUIText-Regular"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="6" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                                <tabStops>
-                                                                    <textTab alignment="left" location="28">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="56">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="84">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="112">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="140">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="168">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="196">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="224">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="252">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="280">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="308">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                    <textTab alignment="left" location="336">
-                                                                        <options/>
-                                                                    </textTab>
-                                                                </tabStops>
-                                                            </paragraphStyle>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="6" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -639,7 +529,7 @@ side projects, sometimes I create custom UI components. Whenever I can, I try to
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iaK-YG-qoK" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2956.521739130435" y="828.26086956521749"/>
+            <point key="canvasLocation" x="2957" y="865"/>
         </scene>
         <!--Base Navigation View Controller-->
         <scene sceneID="xIC-Q8-XGV">
@@ -676,7 +566,7 @@ side projects, sometimes I create custom UI components. Whenever I can, I try to
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BIf-8H-svQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3685.5999999999999" y="187.55622188905548"/>
+            <point key="canvasLocation" x="2957" y="-555"/>
         </scene>
     </scenes>
     <resources>

@@ -43,7 +43,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                     <state key="normal" title="2">
-                        <color key="titleColor" red="0.91372549020000005" green="0.90588235289999997" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="increaseLevel:" destination="-1" eventType="touchUpInside" id="LC2-hg-WGk"/>
