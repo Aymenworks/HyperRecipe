@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D17a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="I0J-B2-Z1e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D17a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ri9-rc-IbM">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -560,10 +560,55 @@ between school and company every month from September 2014 to September 2017 whe
             </objects>
             <point key="canvasLocation" x="2957" y="-555"/>
         </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="rhw-Yt-VMO">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1OK-YI-xds" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="ri9-rc-IbM" customClass="SplashViewController" customModule="HyperRecipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fiY-2L-g2I"/>
+                        <viewControllerLayoutGuide type="bottom" id="51N-Nu-Hs8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eFG-4H-94I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="sdm-wX-Fj0">
+                                <rect key="frame" x="57" y="218" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="3qi-88-0ME"/>
+                                    <constraint firstAttribute="width" constant="300" id="LVO-0I-etg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made by aymenworks.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIj-a5-h1H">
+                                <rect key="frame" x="185" y="695" width="209" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7Hu-vE-U1s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="51N-Nu-Hs8" firstAttribute="top" secondItem="gIj-a5-h1H" secondAttribute="bottom" constant="20" id="Vsu-KF-Eic"/>
+                            <constraint firstAttribute="trailing" secondItem="gIj-a5-h1H" secondAttribute="trailing" constant="20" id="XqG-qu-53j"/>
+                            <constraint firstItem="sdm-wX-Fj0" firstAttribute="centerX" secondItem="eFG-4H-94I" secondAttribute="centerX" id="dwM-0i-NgF"/>
+                            <constraint firstItem="sdm-wX-Fj0" firstAttribute="centerY" secondItem="eFG-4H-94I" secondAttribute="centerY" id="gON-pE-JGp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="I0J-B2-Z1e" kind="show" identifier="showApp" id="yIW-PX-fWv"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="323" y="139"/>
+        </scene>
     </scenes>
     <resources>
         <image name="flagFavorite" width="72" height="123"/>
         <image name="flagFavorite-selected" width="72" height="123"/>
+        <image name="logo" width="1024" height="1024"/>
         <image name="recipe" width="34" height="22"/>
         <image name="recipePlaceholder" width="90" height="73"/>
     </resources>

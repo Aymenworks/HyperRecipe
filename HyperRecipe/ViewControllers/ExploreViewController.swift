@@ -38,7 +38,6 @@ class ExploreViewController: ExpandingViewController {
     collectionView?.register(nib, forCellWithReuseIdentifier: String(describing: RecipeCollectionViewCell.self))
     
     addGestureToView(collectionView!) // From ExpandCollection Library
-    CAEmitterRecipe.animate(inView: self.view, duration: 0.3)
     
     bindViewModel()
   }
