@@ -42,17 +42,9 @@ struct RecipeStub: RecipeAPI {
 
   }
   
-  func updateRecipe(withId id: Int, andData data: [String: Any]) -> Observable<Recipe> {
-    return Observable<Recipe>.create { observer in
-      do {
-        let recipe = Recipe(id: id, name: data["recipeName"] as! String, description: (data["recipeDescription"] as? String) ?? "zeofezofk ezok ezok ez,so kdzotj", instructions: (data["recipeInstructions"] as? String) ?? "dokzodk zok zork zo,zo dzo jzfj ozkd ozkd ozkoez ozn sozks ozk", favorite: data["recipeFavorite"] as! Bool, difficulty: data["recipeDifficulty"] as! Int, createdDate: "2014-09-29T10:43:00.072Z", updatedDate: "2014-09-29T10:43:00.072Z", photo: Photo(url: "", thumbnailUrl: ""))
-        observer.onNext(recipe)
-        
-      } catch {
-        print(error)
-        observer.onError(error)
-      }
-      
+  func updateRecipe(withId id: Int, andData data: [String: Any]) -> Observable<()> {
+    return Observable<()>.create { observer in
+      observer.onNext()
       return Disposables.create()
     }
   }

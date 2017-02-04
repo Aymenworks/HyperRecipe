@@ -11,11 +11,11 @@ import Decodable
 
 struct Recipe {
   let id: Int
-  let name: String
-  let description: String
-  let instructions: String
-  let favorite: Bool
-  let difficulty: Int
+  var name: String
+  var description: String
+  var instructions: String
+  var favorite: Bool
+  var difficulty: Int
   let createdDate: String
   let updatedDate: String
   let photo: Photo

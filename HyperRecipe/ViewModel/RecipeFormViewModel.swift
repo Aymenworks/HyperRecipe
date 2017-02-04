@@ -47,10 +47,10 @@ struct RecipeFormViewModel {
     }
   }
   
-  func updateRecipe(withData data: [String: Any]) -> Observable<Recipe> {
-    return Observable<Recipe>.create { observer in
-      self.service.updateRecipe(withId: self.recipe!.0.id, andData: data).subscribe(onNext: { recipe in
-        observer.onNext(recipe)
+  func updateRecipe(withData data: [String: Any]) -> Observable<()> {
+    return Observable<()>.create { observer in
+      self.service.updateRecipe(withId: self.recipe!.0.id, andData: data).subscribe(onNext: {
+        observer.onNext()
       }, onError: { error in
         observer.onError(error)
       }, onCompleted: {

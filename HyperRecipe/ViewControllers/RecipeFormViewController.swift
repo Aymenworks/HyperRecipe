@@ -166,18 +166,25 @@ class RecipeFormViewController: UIViewController {
         "recipeDifficulty": self.viewModel.currentLevel.value,
         "recipeFavorite": self.favoriteButton.isSelected]
       
+      self.viewModel.recipe?.0.name = self.recipeNameTextField.text!
+      self.viewModel.recipe?.0.difficulty = self.viewModel.currentLevel.value
+      self.viewModel.recipe?.0.favorite = self.favoriteButton.isSelected
+
       if let recipePhoto = self.pickImageButton.imageView?.image {
         data["recipePhoto"] = recipePhoto
       }
       
-      if let recipeDescription = self.descriptionTextView.text, !recipeDescription.isEmpty {
+      if let recipeDescription = self.descriptionTextView.text?.trimmingCharacters(in: .whitespaces), !recipeDescription.isEmpty {
         data["recipeDescription"] = recipeDescription
+        self.viewModel.recipe?.0.description = recipeDescription
       }
       
-      if let recipeInstructions = self.instructionsTextView.text, !recipeInstructions.isEmpty {
+      if let recipeInstructions = self.instructionsTextView.text?.trimmingCharacters(in: .whitespaces), !recipeInstructions.isEmpty {
         data["recipeInstructions"] = recipeInstructions
+        self.viewModel.recipe?.0.instructions = recipeInstructions
       }
       
+      // It's a creation
       if self.viewModel.recipe == nil {
         self.viewModel.createRecipe(withData: data)
           .asObservable()
@@ -192,9 +199,8 @@ class RecipeFormViewController: UIViewController {
       } else {
         self.viewModel.updateRecipe(withData: data)
           .asObservable()
-          .subscribe(onNext: { updatedRecipe in
-            print("recipe updated = \(updatedRecipe)")
-            self.didUpdateRecipe.onNext(updatedRecipe)
+          .subscribe(onNext: {
+            self.didUpdateRecipe.onNext(self.viewModel.recipe!.0)
           }, onError: { error in
             print("error \(error)")
           }).addDisposableTo(self.disposeBag)

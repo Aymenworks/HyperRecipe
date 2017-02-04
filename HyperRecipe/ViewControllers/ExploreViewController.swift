@@ -37,7 +37,7 @@ class ExploreViewController: ExpandingViewController {
     let nib = UINib(nibName: String(describing: RecipeCollectionViewCell.self), bundle: nil)
     collectionView?.register(nib, forCellWithReuseIdentifier: String(describing: RecipeCollectionViewCell.self))
     
-    addGestureToView(collectionView!) // From ExpandCollection Library
+    addGesture()
     
     bindViewModel()
   }
@@ -186,7 +186,7 @@ extension ExploreViewController {
 
 extension ExploreViewController {
   
-  func addGestureToView(_ toView: UIView) {
+  func addGesture() {
     let gestureUp = UISwipeGestureRecognizer(target: self, action: #selector(ExploreViewController.swipeHandler(_:)))
     gestureUp.direction = .up
     
