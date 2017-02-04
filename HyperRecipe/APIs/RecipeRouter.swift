@@ -13,7 +13,7 @@ import Alamofire
 enum RecipeRouter {
   
   static let baseURL = URL(string: "http://hyper-recipes.herokuapp.com/recipes")!
-  
+  static let token   = "IamWaitingForItButItsOkToUseStubAsWELLSoThereAreNoBugs#LazyMan#LoveJapan#"
   case get
   case delete(Int)
   case put(Int, [String: Any])
@@ -21,19 +21,23 @@ enum RecipeRouter {
   
   var url: URL { return RecipeRouter.baseURL.appendingPathComponent(route.path) }
   
-  var route: (path: String, parameters: [String: Any]?) {
+  var route: (path: String, parameters: [String: Any]?, method: HTTPMethod) {
     switch self {
-    case .get: return ("/", nil)
-    case .delete(let id): return ("/\(id)", nil)
-    case .put(let id, let parameters): return ("/\(id)", parameters)
-    case .post(let parameters): return ("/", parameters)
+    case .get: return ("/", nil, .get)
+    case .delete(let id): return ("/\(id)", nil, .delete)
+    case .put(let id, let parameters): return ("/\(id)", parameters, .put)
+    case .post(let parameters): return ("/", parameters, .post)
     }
   }
 }
 
 extension RecipeRouter: URLRequestConvertible {
   func asURLRequest() throws -> URLRequest {
-      return try! URLEncoding().encode(URLRequest(url: url), with: route.parameters)
+    var request = URLRequest(url: url)
+    request.httpMethod = route.method.rawValue
+    request.setValue(RecipeRouter.token, forHTTPHeaderField: "Authorization: Token")
+    let urlRequest = try! URLEncoding().encode(URLRequest(url: url), with: route.parameters)
+    return urlRequest
   }
   
 }
