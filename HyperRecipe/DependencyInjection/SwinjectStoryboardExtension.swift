@@ -15,7 +15,12 @@ extension SwinjectStoryboard {
     
     Container.loggingFunction = nil
     
-    defaultContainer.register(RecipeAPI.self) { _ in RecipeStub() }
+    // Scheme HyperRecipe Stub/Run/Arguments and you'll find below the Stub argument
+    if ProcessInfo.processInfo.arguments.contains("Stub") {
+      defaultContainer.register(RecipeAPI.self) { _ in RecipeStub() }
+    } else {
+      defaultContainer.register(RecipeAPI.self) { _ in RecipeNetwork() }
+    }
     
     defaultContainer.register(RecipeViewModel.self) { r in
       let viewModel = RecipeViewModel(service: r.resolve(RecipeAPI.self)!)
